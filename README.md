@@ -1,16 +1,68 @@
-# portafolio2
+🦾 Portafolio Personal: Cyberpunk 2077 Edition 🌃
 
-A new Flutter project.
+¡Hola y bienvenido! 👋 Este es mi portafolio personal inspirado en una de mis series animadas favoritas: Cyberpunk: Edgerunners 🏃💨.
 
-## Getting Started
+Este proyecto destaca por sus múltiples características técnicas y visuales:
 
-This project is a starting point for a Flutter application.
+🚀 Características Principales
 
-A few resources to get you started if this is your first Flutter project:
+1. 🎨 Temas Dinámicos y Personalizables
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Me basé en 3 personajes de la serie para las paletas de colores:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+David Martinez 🧥 (Amarillo/Negro)
+
+Lucy 🕸️ (Morado/Neón)
+
+Rebecca 🔫 (Verde/Rojo)
+
+¿Cómo funciona técnicamente? 🧠
+Funciona gracias a theme_provider.dart y app_theme.dart (Gestor de Estado).
+
+Mantiene en memoria el tema seleccionado comenzando en el índice 0.
+
+Al presionar el botón, se ejecuta nextTheme() ⏭️, sumando 1 al índice.
+
+Se invoca a notifyListeners() 📢 para actualizar la UI instantáneamente.
+
+Las variables davidTheme, lucyTheme y rebeccaTheme definen propiedades como scaffoldBackgroundColor y acentos.
+
+2. 🎵 Atmósfera Sonora
+
+¡Ambiente inmersivo garantizado! Se integró música de fondo mediante assets locales 🎧, logrando una experiencia completa para el usuario.
+
+3. 🏗️ Arquitectura Limpia (Clean Architecture)
+
+La aplicación sigue el principio de separación de responsabilidades 📂. No mezclamos lógica con diseño:
+
+Configuración: pubspec.yaml
+
+Entrada: main.dart
+
+UI: home_screen.dart, signature_screen.dart
+
+Componentes: info_card.dart
+
+4. 📱 Pantallas y Funcionalidad
+
+🏠 home_screen.dart (UI Principal):
+
+Muestra la foto de perfil desde assets locales 🖼️.
+
+Utiliza Provider.of<ThemeProvider>(context) para cambiar el título dinámicamente según el tema 👆.
+
+Gestiona la reproducción de música con AudioPlayer ▶️ (carga, loop, pausa/reanudar).
+
+📄 signature_screen.dart (Credenciales):
+
+Pantalla secundaria reactiva que muestra los datos del desarrollador, sincronizada con los colores del tema actual.
+
+5. ⚡ Eficiencia y Navegación
+
+El proyecto está diseñado bajo la filosofía KISS (Keep It Simple, Stupid):
+
+Visual: Las pantallas (screens) solo se encargan de pintar datos 👁️.
+
+Arranque: main.dart inyecta el MultiProvider 🔌 y define el tema inicial.
+
+GPS del Proyecto: app_routes.dart 🗺️ asocia Strings (ej: "home") a pantallas, permitiendo una navegación limpia con `Navigator.pushNamed
